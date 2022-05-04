@@ -20,10 +20,12 @@
     display: none;
 }
 
-.QuestionBody {
+/* repeating the class gives this rule priority over qualtrics stuff */
+.QuestionBody.QuestionBody {
     padding: 0 !important;
 }
 
 .question-map {
-    height: 600px;
+    height: 50vh;
+}
 }
