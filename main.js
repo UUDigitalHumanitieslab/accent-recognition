@@ -1,41 +1,60 @@
+const MAP_OPTIONS = {
+    center: {
+        lat: 53.1145,
+        lng: 5.675
+    },
+    zoom: 9,
+    disableDefaultUI: true
+};
+
+
+// from: https://stackoverflow.com/questions/14560999/using-the-haversine-formula-in-javascript
+function haversineDistance([lat1, lon1], [lat2, lon2]) {
+    const toRadian = angle => (Math.PI / 180) * angle;
+    const distance = (a, b) => (Math.PI / 180) * (a - b);
+    const RADIUS_OF_EARTH_IN_KM = 6371;
+
+    const dLat = distance(lat2, lat1);
+    const dLon = distance(lon2, lon1);
+    lat1 = toRadian(lat1);
+    lat2 = toRadian(lat2);
+
+    // Haversine Formula
+    const a =
+          Math.pow(Math.sin(dLat / 2), 2) +
+          Math.pow(Math.sin(dLon / 2), 2) * Math.cos(lat1) * Math.cos(lat2);
+    const c = 2 * Math.asin(Math.sqrt(a));
+
+    let finalDistance = RADIUS_OF_EARTH_IN_KM * c;
+
+    return finalDistance;
+}
 
 function updateValue(dataBox, loc) {
     let value = JSON.stringify({
         source: document.querySelector('#fragment_location').value,
         response: loc
     });
+
+    // quotes must be escaped because we embed the value using
+    // Qualtrics' embedded strings, and that woulde the HTML code
     let escaped = value.replace(/"/g, '&quot;');
     dataBox.value = escaped;
 }
 
 function insertMap(id, container) {
-    let map = {};
-    map.options = {
-        center: {
-            lat: 53.1145,
-            lng: 5.675
-        },
-        zoom: 9,
-        disableDefaultUI: true
-    };
-
-    // css overrides
-    document.querySelector('#HeaderContainer').remove();
-
+    let map = {options: MAP_OPTIONS};
 
     const questionBody = container.querySelector('.QuestionBody');
-    questionBody.style.setProperty('padding', '0', 'important');
 
     const styles = document.createElement('style');
     document.head.appendChild(styles);
 
     const mapObject = document.createElement('div');
-    mapObject.setAttribute('id', `${id}-map`);
-    styles.innerText += `#${id}-map {height: 600px;}`;
-
+    mapObject.classList.add('question-map');
     questionBody.appendChild(mapObject);
-    const googleMap = new google.maps.Map(mapObject, map.options);
 
+    const googleMap = new google.maps.Map(mapObject, map.options);
     return googleMap;
 }
 
@@ -54,7 +73,7 @@ function initGoogleMapsQuestion(id, container) {
         updateValue(dataBox, event.latLng);
 
         let next = document.querySelector('#NextButton');
-        next.style.display = 'block';
+        next.classList.remove('hidden');
     });
 }
 
@@ -89,16 +108,29 @@ function showFeedback(id, container) {
 
     map.setCenter(bounds.getCenter());
     map.fitBounds(bounds);
+
+    // calculate distance and score
+    let km = haversineDistance([srcLatLng.lat, srcLatLng.lng],
+                               [data.response.lat, data.response.lng]);
+
+    let score = parseFloat(document.querySelector('#score').value) || 0;
+    let points = kmToPoints(km);
+    score += points;
+
+    Qualtrics.SurveyEngine.setEmbeddedData('score', score.toFixed(1));
+
+    // present textual feedback
+    let feedback = document.querySelector('#pp_feedback');
+    feedback.innerHTML = `<p>Your guess was ${km.toFixed(1)}km away from the location of the speaker</p><p>You get ${points} points</p>`;
+}
+
+// placeholder score formula
+function kmToPoints(km) {
+    return Math.floor(10 * Math.max(0, (4 - Math.log(km)) * 5)) / 10;
 }
 
 function onReadyHandler() {
     let next = document.querySelector('#NextButton');
-    next.style.display = 'none'; // hide until participant responds
-    next.style.position = 'fixed';
-    next.style.right = '10%';
-    next.style.bottom = '5%';
-    next.style.fontSize = '35px';
-    next.style.borderRadius = '30px';
-    next.style.width = next.style.height = '60px';
-    next.style.padding = '0';
+    // hide the next button until participant responds
+    next.classList.add('hidden');
 }

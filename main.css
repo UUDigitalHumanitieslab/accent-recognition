@@ -1,0 +1,29 @@
+#NextButton {
+    position: fixed;
+    right: 10%;
+    bottom: 5%;
+    font-size: 35px !important;
+    border-radius: 30px !important;
+    width: 60px;
+    height: 60px;
+    padding: 0 !important;
+
+    transition: bottom .5s !important;
+}
+
+#NextButton.hidden {
+    bottom: -10%;
+}
+
+#HeaderContainer {
+    /* removes some whitespace */
+    display: none;
+}
+
+.QuestionBody {
+    padding: 0 !important;
+}
+
+.question-map {
+    height: 600px;
+}
