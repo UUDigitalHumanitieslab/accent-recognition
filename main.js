@@ -64,8 +64,17 @@ function initGoogleMapsQuestion(id, container) {
     let dataBox = document.getElementById(`QR~${id}`);
     dataBox.style.display = 'none';
 
+    let played = false;
+    document.querySelector('#fragment_audio').addEventListener('play', (event) => {
+        played = true;
+    });
+
     let marker = null;
     google.maps.event.addListener(googleMap, 'click', (event) => {
+        if (!played) {
+            document.querySelector('.listen-first').style.display = 'block';
+            return;
+        }
         if (marker === null) {
             marker = new google.maps.Marker({map: googleMap});
         }

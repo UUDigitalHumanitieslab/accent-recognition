@@ -28,4 +28,8 @@
 .question-map {
     height: 50vh;
 }
+
+.listen-first {
+    display: none;
+    color: #e11;
 }
