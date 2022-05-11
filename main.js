@@ -6,6 +6,8 @@
         return;
     }
 
+    const AUDIO_ROOT = 'http://localhost:8000/';
+
     if (typeof google === 'undefined') {
         let script = document.createElement('script');
         script.src = 'https://maps.googleapis.com/maps/api/js?key=' + MAPS_API_KEY;
@@ -159,8 +161,31 @@
         next.classList.add('hidden');
     }
 
+    function initSpeakerFragment(container, audioSrc, correctLocation) {
+        // embed some necessary elements into the question html
+        let questionBody = container.querySelector('.QuestionText');
+
+        let audio = document.createElement('audio');
+        audio.controls = true;
+        audio.src = AUDIO_ROOT + audioSrc;
+        audio.id = 'fragment_audio';
+        questionBody.appendChild(audio);
+
+        let listenFirst = document.createElement('div');
+        listenFirst.classList.add('listen-first');
+        listenFirst.innerHTML = '<span>Please listen to the speaker first</span>';
+        questionBody.appendChild(listenFirst);
+
+        let input = document.createElement('input');
+        input.value = correctLocation;
+        input.id = input.name = 'fragment_location';
+        input.type = 'hidden';
+        questionBody.appendChild(input);
+    }
+
     // register global functions
     window.onReadyHandler = onReadyHandler;
     window.initGoogleMapsQuestion = initGoogleMapsQuestion;
+    window.initSpeakerFragment = initSpeakerFragment;
     window.showFeedback = showFeedback;
 })();
