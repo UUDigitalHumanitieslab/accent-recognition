@@ -80,13 +80,14 @@
 
         let played = false;
         document.querySelector('#fragment_audio').addEventListener('play', (event) => {
+            document.querySelector('.listen-first').style.opacity = 0;
             played = true;
         });
 
         let marker = null;
         google.maps.event.addListener(googleMap, 'click', (event) => {
             if (!played) {
-                document.querySelector('.listen-first').style.display = 'block';
+                document.querySelector('.listen-first').style.opacity = 1;
                 return;
             }
             if (marker === null) {
