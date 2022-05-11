@@ -1,5 +1,3 @@
-
-// load google maps
 (function() {
     // safeguard against qualtrices loading this file multiple times, which might cause issues
     if (window.dfdLoaded) {
@@ -7,7 +5,7 @@
     }
 
     const AUDIO_ROOT = 'http://localhost:8000/';
-
+    const FRIESLAND_POLYGON = [[4.8183758,53.2142748],[5.3609526,53.1332657],[5.3891346,52.9976124],[5.3386819,52.854061],[5.6513527,52.8230546],[5.6602961,52.8312504],[5.7488074,52.8396796],[5.7843822,52.8174758],[5.8194968,52.8172509],[5.8787627,52.8008488],[5.9243402,52.8239917],[5.9326309,52.8354308],[5.9724382,52.8419167],[5.9966432,52.8166213],[6.0311685,52.8149907],[6.0810003,52.8387323],[6.2069001,52.8907439],[6.2565931,52.9276412],[6.3029853,52.9249724],[6.3332806,52.9063561],[6.3934358,52.9328434],[6.4276147,52.9718154],[6.3625214,53.033969],[6.3677865,53.0673777],[6.3052738,53.0811896],[6.3151575,53.0940528],[6.2583724,53.1143713],[6.2050483,53.1154842],[6.1752349,53.1359026],[6.1772507,53.1667672],[6.1995423,53.1981639],[6.2299901,53.2178387],[6.2179783,53.2419321],[6.2558035,53.2705528],[6.253187,53.2878592],[6.2783072,53.3027309],[6.2869808,53.3413818],[6.1785885,53.3648278],[6.1679447,53.3907591],[6.1940203,53.4132888],[6.3504262,53.4462685],[6.3515669,53.4970416],[6.4022099,53.4940082],[6.4044491,53.5208856],[6.3220716,53.5264757],[6.1861282,53.5139753],[6.1259923,53.5233436],[6.1104612,53.496483],[6.0049286,53.4925775],[5.9596119,53.4838163],[5.8390154,53.4753439],[5.7034426,53.4712836],[5.6132093,53.4939486],[5.5528559,53.4715849],[5.357119,53.4312636],[5.1766933,53.4086213],[5.1617743,53.3861317],[5.1017784,53.3680343],[5.087069,53.3230725],[5.0271173,53.3139226],[4.9076899,53.2595929],[4.8406016,53.2323495],[4.8183758,53.2142748]];
     if (typeof google === 'undefined') {
         // Qualtrics includes a copy of prototype.js, which by default overrides Array.from.
         // Google Maps doesn't like it, so I looked for way to restore the original function,
@@ -27,19 +25,19 @@
 
     const MAP_OPTIONS = {
         center: {
-            lat: 53.1145,
-            lng: 5.675
+            lat: 53.1836,
+            lng: 5.6229,
         },
         restriction: {
             latLngBounds: {
-                south: 52.7648052,
-                north: 53.5397134,
-                west: 4.8183758,
-                east: 6.4276147
+                south: 52.5648052,
+                north: 53.7397134,
+                west: 4.6183758,
+                east: 6.6276147
             },
             strictBounds: false,
         },
-        zoom: 9,
+        zoom: 8.5,
         disableDefaultUI: true
     };
 
@@ -95,7 +93,7 @@
     }
 
     function initGoogleMapsQuestion(id, container) {
-        let googleMap = insertMap(id, container);
+        let map = insertMap(id, container);
 
         let dataBox = document.getElementById(`QR~${id}`);
         dataBox.style.display = 'none';
@@ -107,13 +105,13 @@
         });
 
         let marker = null;
-        google.maps.event.addListener(googleMap, 'click', (event) => {
+        google.maps.event.addListener(map, 'click', (event) => {
             if (!played) {
                 document.querySelector('.listen-first').style.opacity = 1;
                 return;
             }
             if (marker === null) {
-                marker = new google.maps.Marker({map: googleMap});
+                marker = new google.maps.Marker({map: map});
             }
             marker.setPosition(event.latLng);
             updateValue(dataBox, event.latLng);
@@ -121,6 +119,25 @@
             let next = document.querySelector('#NextButton');
             next.classList.remove('hidden');
         });
+
+        // draw polygon with hole around Friesland
+        let outer = [
+            {lat:0, lng:0},
+            {lat:180, lng:0},
+            {lat:180, lng:100},
+            {lat:0, lng:100},
+        ];
+        let inner = FRIESLAND_POLYGON.map((coord) => {return {lat: coord[1], lng: coord[0]}});
+        let poly = new google.maps.Polygon({
+            paths: [outer, inner],
+            strokeColor: "#000000",
+            strokeOpacity: 0.2,
+            strokeWeight: 2,
+            fillColor: "#000000",
+            fillOpacity: 0.35,
+        });
+
+        poly.setMap(map);
     }
 
     function showFeedback(id, container) {
