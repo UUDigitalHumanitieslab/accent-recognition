@@ -9,8 +9,16 @@
     const AUDIO_ROOT = 'http://localhost:8000/';
 
     if (typeof google === 'undefined') {
-        // restore Array.from (overriden by prototype.js) to avoid potential errors with google maps
-        Array.from = top.Array.from;
+        // Qualtrics includes a copy of prototype.js, which by default overrides Array.from.
+        // Google Maps doesn't like it, so I looked for way to restore the original function,
+        // and the following is the only way I could think of.
+        let iframe = document.createElement('iframe');
+        iframe.src = '';
+        iframe.style.display = 'none';
+        // iframe has to be added to the document to get a contentWindow
+        document.body.appendChild(iframe);
+        Array.from = iframe.contentWindow.Array.from;
+        iframe.remove();
 
         let script = document.createElement('script');
         script.src = 'https://maps.googleapis.com/maps/api/js?key=' + MAPS_API_KEY;
