@@ -9,6 +9,9 @@
     const AUDIO_ROOT = 'http://localhost:8000/';
 
     if (typeof google === 'undefined') {
+        // restore Array.from (overriden by prototype.js) to avoid potential errors with google maps
+        Array.from = top.Array.from;
+
         let script = document.createElement('script');
         script.src = 'https://maps.googleapis.com/maps/api/js?key=' + MAPS_API_KEY;
         document.head.appendChild(script);
