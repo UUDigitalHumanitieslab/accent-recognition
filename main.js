@@ -30,6 +30,15 @@
             lat: 53.1145,
             lng: 5.675
         },
+        restriction: {
+            latLngBounds: {
+                south: 52.7648052,
+                north: 53.5397134,
+                west: 4.8183758,
+                east: 6.4276147
+            },
+            strictBounds: false,
+        },
         zoom: 9,
         disableDefaultUI: true
     };
