@@ -68,10 +68,11 @@
         return finalDistance;
     }
 
-    function updateValue(dataBox, loc) {
+    function updateValue(dataBox, loc, zoomLevel) {
         let value = JSON.stringify({
             source: document.querySelector('#fragment_location').value,
-            response: loc
+            response: loc,
+            zoom: zoomLevel
         });
 
         // quotes must be escaped because we embed the value using
@@ -118,7 +119,7 @@
                 marker = new google.maps.Marker({map: map});
             }
             marker.setPosition(event.latLng);
-            updateValue(dataBox, event.latLng);
+            updateValue(dataBox, event.latLng, map.zoom);
 
             let next = document.querySelector('#NextButton');
             next.classList.remove('hidden');
