@@ -41,7 +41,8 @@
             strictBounds: false,
         },
         zoom: 8.5,
-        disableDefaultUI: true
+        disableDefaultUI: true,
+        zoomControl: true
     };
 
 
