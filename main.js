@@ -22,6 +22,7 @@
         document.head.appendChild(script);
     }
 
+    const MAP_ZOOM = 8.5;
     const MAP_OPTIONS = {
         center: {
             lat: 53.1836,
@@ -36,7 +37,7 @@
             },
             strictBounds: false,
         },
-        zoom: 8.5,
+        zoom: MAP_ZOOM,
         disableDefaultUI: true,
         zoomControl: true
     };
@@ -266,7 +267,7 @@
         bounds.extend(responseMarker.position);
 
         map.setCenter(bounds.getCenter());
-        map.fitBounds(bounds);
+        map.setZoom(MAP_ZOOM);
 
         // calculate distance and score
         let km = haversineDistance([srcLatLng.lat, srcLatLng.lng],
