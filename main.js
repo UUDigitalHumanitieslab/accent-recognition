@@ -281,7 +281,12 @@
 
         // present textual feedback
         let feedback = document.querySelector('#pp_feedback');
-        feedback.innerHTML = `<p>
+        feedback.innerHTML = '';
+
+        if (km < 5) {
+            feedback.innerHTML += '<p>Correct!</p>';
+        }
+        feedback.innerHTML += `<p>
             Your guess was ${km.toFixed(1)}km away from
             the location of the speaker (${round.item.place})
             </p>
