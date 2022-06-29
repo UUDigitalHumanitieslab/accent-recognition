@@ -108,6 +108,12 @@
         // keep track of the assigned lists to avoid duplication
         listsStarted = [];
 
+        // cumulative score
+        score = 0;
+
+        // how many items were presented in total
+        total = 0;
+
         pickList() {
             if (this.listsStarted.length < LISTS.length) {
                 let i;
@@ -117,6 +123,7 @@
 
                 let list = LISTS[i];
                 this.listsStarted.push(i);
+                this.total += list.items.length;
                 return list;
             }
             return null;
@@ -273,11 +280,11 @@
         let km = haversineDistance([srcLatLng.lat, srcLatLng.lng],
                                    [data.response.lat, data.response.lng]);
 
-        let score = parseFloat(document.querySelector('#score').value) || 0;
         let points = kmToPoints(km);
-        score += points;
+        session.score += points;
 
-        Qualtrics.SurveyEngine.setEmbeddedData('score', score.toFixed(1));
+        let niceScore = (session.score / session.total).toFixed(1);
+        Qualtrics.SurveyEngine.setEmbeddedData('score', niceScore);
 
         // present textual feedback
         let feedback = document.querySelector('#pp_feedback');
