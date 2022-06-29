@@ -1,9 +1,9 @@
 (function() {
     // safeguard against qualtrices loading this file multiple times, which might cause issues
-    if (window.dfdLoaded) {
+    if (top.window.dfdLoaded) {
         return;
     }
-    window.dfdLoaded = true;
+    top.window.dfdLoaded = true;
 
     if (typeof google === 'undefined') {
         // Qualtrics includes a copy of prototype.js, which by default overrides Array.from.
