@@ -458,7 +458,11 @@
         audio.controls = true;
         audio.src = AUDIO_ROOT + audioSrc;
         audio.id = 'fragment_audio';
-        audio.autoplay = true;
+	if (questionBody.offsetWidth > 0) {
+	    // small hack to prevent audio autoplaying in mobile preview iframe
+	    // (only relevant when previewing the survey)
+	    audio.autoplay = true;
+	}
         questionBody.appendChild(audio);
 
         let listenFirst = document.createElement('div');
