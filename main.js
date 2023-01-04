@@ -423,13 +423,19 @@
         feedback.innerHTML = '';
 
         if (km < 5) {
-            feedback.innerHTML += '<p>Correct!</p>';
+	    feedback.innerHTML += `
+		<p>Dat klopt, het juiste antwoord is ${round.item.place}. </p>
+		<p>Dat kloppet, it goede antwurd is ${round.item.placef}.</p>`;
         }
-        feedback.innerHTML += `<p>
-            Your guess was ${km.toFixed(1)}km away from
-            the location of the speaker (${round.item.place})
-            </p>
-            <p>You get ${points} points</p>`;
+	else {
+	    feedback.innerHTML += `
+		<p>Het juiste antwoord was ${round.item.place}. </p>
+		<p>It goede antwurd wie ${round.item.placef}.</p>`;
+	}
+	feedback.innerHTML += `
+		<p></p>
+		<p>Het verschil is ${km.toFixed(1)} km.</p>
+		<p>It ferskil is ${km.toFixed(1)} km.</p>`;
     }
 
     // placeholder score formula
