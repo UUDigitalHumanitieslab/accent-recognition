@@ -440,10 +440,8 @@
 
     // placeholder score formula
     function kmToPoints(km) {
-        return Math.max(
-            0,
-            10 - Math.ceil(Math.max(0, km - 5) / 5)
-        );
+	if (km < 5) return 1;
+	return 0;
     }
 
     function onReadyHandler() {
