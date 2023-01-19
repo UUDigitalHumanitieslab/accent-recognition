@@ -84,7 +84,7 @@
 	     {id: 5, audio: 'Hallum_O.wav', loc: LOCS['Hallum'] },
 	     {id: 6, audio: 'Sexbierum_J.wav', loc: LOCS['Sexbierum'] },
 	     {id: 7, audio: 'Woudsend_O.wav', loc: LOCS['Woudsend'] },
-	     {id: 8, audio: 'Grou_J.wav', loc: LOCS['Goru'] },
+	     {id: 8, audio: 'Grou_J.wav', loc: LOCS['Grou'] },
 	     {id: 9, audio: 'Joure_O.wav', loc: LOCS['Joure'] },
 	     {id: 10, audio: 'Oudemirdum_J.wav', loc: LOCS['Oudemirdum'] },
          ]
