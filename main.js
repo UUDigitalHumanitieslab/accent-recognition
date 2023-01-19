@@ -424,18 +424,18 @@
 
         if (km < 5) {
 	    feedback.innerHTML += `
-		<p>Dat klopt, het juiste antwoord is ${round.item.loc.place}. </p>
-		<p>Dat kloppet, it goede antwurd is ${round.item.loc.placef}.</p>`;
+		<p style="font-size:18px">Dat klopt, het juiste antwoord is ${round.item.loc.place}. </p>
+		<p style="font-size:16px"><i>Dat kloppet, it goede antwurd is ${round.item.loc.placef}.</i></p>`;
         }
 	else {
 	    feedback.innerHTML += `
-		<p>Het juiste antwoord was ${round.item.loc.place}. </p>
-		<p>It goede antwurd wie ${round.item.loc.placef}.</p>`;
+		<p style="font-size:18px">Het juiste antwoord was ${round.item.loc.place}. </p>
+		<p style="font-size:16px"><i>It goede antwurd wie ${round.item.loc.placef}.</i></p>`;
 	}
 	feedback.innerHTML += `
 		<p></p>
-		<p>Het verschil is ${km.toFixed(1)} km.</p>
-		<p>It ferskil is ${km.toFixed(1)} km.</p>`;
+		<p style="font-size:18px">Het verschil is ${km.toFixed(1)} km.</p>
+		<p style="font-size:16px"><i>It ferskil is ${km.toFixed(1)} km.</i></p>`;
     }
 
     // placeholder score formula
