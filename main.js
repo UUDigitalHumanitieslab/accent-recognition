@@ -415,7 +415,8 @@
         let points = kmToPoints(km);
         session.score += points;
 
-        let niceScore = (session.score / session.total).toFixed(1);
+	let rounds = (session.total / 10);
+        let niceScore = (session.score / rounds).toFixed(1);
         Qualtrics.SurveyEngine.setEmbeddedData('score', niceScore);
 
         // present textual feedback
