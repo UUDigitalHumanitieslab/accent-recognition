@@ -52,139 +52,139 @@
     ]};
 
     const LOCS = {
-	'Nij Beets': [5.8541195, 53.0651628],
-	'Bakkeveen': [6.1398719, 53.0740136],
-	'Rinsumageest': [5.8936294, 53.2932624],
-	'De Westereen': [6.0142491, 53.2657702],
-	'Hallum': [5.747541, 53.3095117],
-	'Sexbierum': [5.470268, 53.2177585],
-	'Woudsend': [5.6183816, 52.9411684],
-	'Grou': [5.8047157, 53.104226],
-	'Joure': [5.655277, 52.9789039],
-	'Oudemirdum': [5.5129716, 52.8528357],
-	'Jubbega': [5.9815669, 52.9814468],
-	'Tietjerk': [5.8590231, 53.199898],
-	'Harkema': [6.1109401, 53.1845225],
-	'Anjum': [6.1146752, 53.3781042],
-	'Weidum': [5.7265206, 53.1425023],
-	'Makkum': [5.379195, 53.0565876],
-	'Akkrum': [5.7943942, 53.0549881],
-	'Lemmer': [5.6627988, 52.8668586],
-	'Workum': [5.4037903, 52.9734946],
-	'Holwerd': [5.8624713, 53.3633274]
+	'Nij Beets': { coord: [5.8541195, 53.0651628], place: 'Nij Beets', placef: 'Nij Beets' },
+	'Bakkeveen': { coord: [6.1398719, 53.0740136], place: 'Bakkeveen', placef: 'Bakkefean' },
+	'Rinsumageest': { coord: [5.8936294, 53.2932624], place: 'Rinsumageest', placef: 'Rinsumageast' },
+	'De Westereen': { coord: [6.0142491, 53.2657702], place: 'De Westereen', placef: 'De Westereen' },
+	'Hallum': { coord: [5.747541, 53.3095117], place: 'Hallum', placef: 'Hallum' },
+	'Sexbierum': { coord: [5.470268, 53.2177585], place: 'Sexbierum', placef: 'Seisbierrum' },
+	'Woudsend': { coord: [5.6183816, 52.9411684], place: 'Woudsend', placef: 'Wâldsein' },
+	'Grou': { coord: [5.8047157, 53.104226], place: 'Grou', placef: 'Grou' },
+	'Joure': { coord: [5.655277, 52.9789039], place: 'Joure', placef: 'De Jouwer' },
+	'Oudemirdum': { coord: [5.5129716, 52.8528357], place: 'Oudemirdum', placef: 'Aldemardum' },
+	'Jubbega': { coord: [5.9815669, 52.9814468], place: 'Jubbega', placef: 'Jobbegea' },
+	'Tietjerk': { coord: [5.8590231, 53.199898], place: 'Tietjerk', placef: 'Tytsjerk' },
+	'Harkema': { coord: [6.1109401, 53.1845225], place: 'Harkema', placef: 'Harkema' },
+	'Anjum': { coord: [6.1146752, 53.3781042], place: 'Anjum', placef: 'Anjum' },
+	'Weidum': { coord: [5.7265206, 53.1425023], place: 'Weidum', placef: 'Weidum' },
+	'Makkum': { coord: [5.379195, 53.0565876], place: 'Makkum', placef: 'Makkum' },
+	'Akkrum': { coord: [5.7943942, 53.0549881], place: 'Akkrum', placef: 'Akkrum' },
+	'Lemmer': { coord: [5.6627988, 52.8668586], place: 'Lemmer', placef: 'De Lemmer' },
+	'Workum': { coord: [5.4037903, 52.9734946], place: 'Workum', placef: 'Warkum' },
+	'Holwerd': { coord: [5.8624713, 53.3633274], place: 'Holwerd', placef: 'Holwert' }
     };
 
     const LISTS = [
         {id: 1,
          items: [
-	     {id: 1, audio: 'NijBeets_J.wav', coord: LOCS['Nij Beets'], place: 'Nij Beets', placef: 'Nij Beets'},
-	     {id: 2, audio: 'Bakkeveen_O.wav', coord: LOCS['Bakkeveen'], place: 'Bakkeveen', placef: 'Bakkefean'},
-	     {id: 3, audio: 'Rinsumageest_J.wav', coord: LOCS['Rinsumageest'], place: 'Rinsumageest', placef: 'Rinsumageast'},
-	     {id: 4, audio: 'DeWestereen_O.wav', coord: LOCS['De Westereen'], place: 'De Westereen', placef: 'De Westereen'},
-	     {id: 5, audio: 'Hallum_O.wav', coord: LOCS['Hallum'], place: 'Hallum', placef: 'Hallum'},
-	     {id: 6, audio: 'Sexbierum_J.wav', coord: LOCS['Sexbierum'], place: 'Sexbierum', placef: 'Seisbierrum'},
-	     {id: 7, audio: 'Woudsend_O.wav', coord: LOCS['Woudsend'], place: 'Woudsend', placef: 'Wâldsein'},
-	     {id: 8, audio: 'Grou_J.wav', coord: LOCS['Goru'], place: 'Grou', placef: 'Grou'},
-	     {id: 9, audio: 'Joure_O.wav', coord: LOCS['Joure'], place: 'Joure', placef: 'De Jouwer'},
-	     {id: 10, audio: 'Oudemirdum_J.wav', coord: LOCS['Oudemirdum'], place: 'Oudemirdum', placef: 'Aldemardum'},
+	     {id: 1, audio: 'NijBeets_J.wav', loc: LOCS['Nij Beets'] },
+	     {id: 2, audio: 'Bakkeveen_O.wav', loc: LOCS['Bakkeveen'] },
+	     {id: 3, audio: 'Rinsumageest_J.wav', loc: LOCS['Rinsumageest'] },
+	     {id: 4, audio: 'DeWestereen_O.wav', loc: LOCS['De Westereen'] },
+	     {id: 5, audio: 'Hallum_O.wav', loc: LOCS['Hallum'] },
+	     {id: 6, audio: 'Sexbierum_J.wav', loc: LOCS['Sexbierum'] },
+	     {id: 7, audio: 'Woudsend_O.wav', loc: LOCS['Woudsend'] },
+	     {id: 8, audio: 'Grou_J.wav', loc: LOCS['Goru'] },
+	     {id: 9, audio: 'Joure_O.wav', loc: LOCS['Joure'] },
+	     {id: 10, audio: 'Oudemirdum_J.wav', loc: LOCS['Oudemirdum'] },
          ]
         },
         {id: 2,
          items: [
-	     {id: 11, audio: 'NijBeets_O.wav', coord: LOCS['Nij Beets'], place: 'Nij Beets', placef: 'Nij Beets'},
-	     {id: 12, audio: 'Bakkeveen_J.wav', coord: LOCS['Bakkeveen'], place: 'Bakkeveen', placef: 'Bakkefean'},
-	     {id: 13, audio: 'Rinsumageest_O.wav', coord: LOCS['Rinsumageest'], place: 'Rinsumageest', placef: 'Rinsumageast'},
-	     {id: 14, audio: 'DeWestereen_J.wav', coord: LOCS['De Westereen'], place: 'De Westereen', placef: 'De Westereen'},
-	     {id: 15, audio: 'Hallum_J.wav', coord: LOCS['Hallum'], place: 'Hallum', placef: 'Hallum'},
-	     {id: 16, audio: 'Sexbierum_O.wav', coord: LOCS['Sexbierum'], place: 'Sexbierum', placef: 'Seisbierrum'},
-	     {id: 17, audio: 'Woudsend_J.wav', coord: LOCS['Woudsend'], place: 'Woudsend', placef: 'Wâldsein'},
-	     {id: 18, audio: 'Grou_O.wav', coord: LOCS['Grou'], place: 'Grou', placef: 'Grou'},
-	     {id: 19, audio: 'Joure_J.wav', coord: LOCS['Joure'], place: 'Joure', placef: 'De Jouwer'},
-	     {id: 20, audio: 'Oudemirdum_O.wav', coord: LOCS['Oudemirdum'], place: 'Oudemirdum', placef: 'Aldemardum'},
+	     {id: 11, audio: 'NijBeets_O.wav', loc: LOCS['Nij Beets'] },
+	     {id: 12, audio: 'Bakkeveen_J.wav', loc: LOCS['Bakkeveen'] },
+	     {id: 13, audio: 'Rinsumageest_O.wav', loc: LOCS['Rinsumageest'] },
+	     {id: 14, audio: 'DeWestereen_J.wav', loc: LOCS['De Westereen'] },
+	     {id: 15, audio: 'Hallum_J.wav', loc: LOCS['Hallum'] },
+	     {id: 16, audio: 'Sexbierum_O.wav', loc: LOCS['Sexbierum'] },
+	     {id: 17, audio: 'Woudsend_J.wav', loc: LOCS['Woudsend'] },
+	     {id: 18, audio: 'Grou_O.wav', loc: LOCS['Grou'] },
+	     {id: 19, audio: 'Joure_J.wav', loc: LOCS['Joure'] },
+	     {id: 20, audio: 'Oudemirdum_O.wav', loc: LOCS['Oudemirdum'] },
          ]
         },
         {id: 3,
          items: [
-	     {id: 21, audio: 'Bakkeveen_O.wav', coord: LOCS['Bakkeveen'], place: 'Bakkeveen', placef: 'Bakkefean'},
-	     {id: 22, audio: 'Jubbega_J.wav', coord: LOCS['Jubbega'], place: 'Jubbega', placef: 'Jobbegea'},
-	     {id: 23, audio: 'Tietjerk_O.wav', coord: LOCS['Tietjerk'], place: 'Tietjerk', placef: 'Tytsjerk'},
-	     {id: 24, audio: 'Harkema_J.wav', coord: LOCS['Harkema'], place: 'Harkema', placef: 'De Harkema'},
-	     {id: 25, audio: 'Anjum_O.wav', coord: LOCS['Anjum'], place: 'Anjum', placef: 'Anjum'},
-	     {id: 26, audio: 'Weidum_J.wav', coord: LOCS['Weidum'], place: 'Weidum', placef: 'Weidum'},
-	     {id: 27, audio: 'Makkum_O.wav', coord: LOCS['Makkum'], place: 'Makkum', placef: 'Makkum'},
-	     {id: 28, audio: 'Akkrum_J.wav', coord: LOCS['Akkrum'], place: 'Akkrum', placef: 'Akkrum'},
-	     {id: 29, audio: 'Lemmer_J.wav', coord: LOCS['Lemmer'], place: 'Lemmer', placef: 'Lemmer'},
-	     {id: 30, audio: 'Workum_O.wav', coord: LOCS['Workum'], place: 'Workum', placef: 'Warkum'},
+	     {id: 21, audio: 'Bakkeveen_O.wav', loc: LOCS['Bakkeveen'] },
+	     {id: 22, audio: 'Jubbega_J.wav', loc: LOCS['Jubbega'] },
+	     {id: 23, audio: 'Tietjerk_O.wav', loc: LOCS['Tietjerk'] },
+	     {id: 24, audio: 'Harkema_J.wav', loc: LOCS['Harkema'] },
+	     {id: 25, audio: 'Anjum_O.wav', loc: LOCS['Anjum'] },
+	     {id: 26, audio: 'Weidum_J.wav', loc: LOCS['Weidum'] },
+	     {id: 27, audio: 'Makkum_O.wav', loc: LOCS['Makkum'] },
+	     {id: 28, audio: 'Akkrum_J.wav', loc: LOCS['Akkrum'] },
+	     {id: 29, audio: 'Lemmer_J.wav', loc: LOCS['Lemmer'] },
+	     {id: 30, audio: 'Workum_O.wav', loc: LOCS['Workum'] },
          ]
         },
         {id: 4,
          items: [
-	     {id: 31, audio: 'Bakkeveen_J.wav', coord: LOCS['Bakkeveen'], place: 'Bakkeveen', placef: 'Bakkefean'},
-	     {id: 32, audio: 'Jubbega_O.wav', coord: LOCS['Jubbega'], place: 'Jubbega', placef: 'Jobbegea'},
-	     {id: 33, audio: 'Tietjerk_J.wav', coord: LOCS['Tietjerk'], place: 'Tietjerk', placef: 'Tytsjerk'},
-	     {id: 34, audio: 'Harkema_O.wav', coord: LOCS['Harkema'], place: 'Harkema', placef: 'Harkema'},
-	     {id: 35, audio: 'Anjum_J.wav', coord: LOCS['Anjum'], place: 'Anjum', placef: 'Anjum'},
-	     {id: 36, audio: 'Weidum_O.wav', coord: LOCS['Weidum'], place: 'Weidum', placef: 'Weidum'},
-	     {id: 37, audio: 'Makkum_J.wav', coord: LOCS['Makkum'], place: 'Makkum', placef: 'Makkum'},
-	     {id: 38, audio: 'Akkrum_O.wav', coord: LOCS['Akkrum'], place: 'Akkrum', placef: 'Akkrum'},
-	     {id: 39, audio: 'Lemmer_O.wav', coord: LOCS['Lemmer'], place: 'Lemmer', placef: 'Lemmer'},
-	     {id: 40, audio: 'Workum_J.wav', coord: LOCS['Workum'], place: 'Workum', placef: 'Warkum'},
+	     {id: 31, audio: 'Bakkeveen_J.wav', loc: LOCS['Bakkeveen'] },
+	     {id: 32, audio: 'Jubbega_O.wav', loc: LOCS['Jubbega'] },
+	     {id: 33, audio: 'Tietjerk_J.wav', loc: LOCS['Tietjerk'] },
+	     {id: 34, audio: 'Harkema_O.wav', loc: LOCS['Harkema'] },
+	     {id: 35, audio: 'Anjum_J.wav', loc: LOCS['Anjum'] },
+	     {id: 36, audio: 'Weidum_O.wav', loc: LOCS['Weidum'] },
+	     {id: 37, audio: 'Makkum_J.wav', loc: LOCS['Makkum'] },
+	     {id: 38, audio: 'Akkrum_O.wav', loc: LOCS['Akkrum'] },
+	     {id: 39, audio: 'Lemmer_O.wav', loc: LOCS['Lemmer'] },
+	     {id: 40, audio: 'Workum_J.wav', loc: LOCS['Workum'] },
          ]
         },
         {id: 5,
          items: [
-	     {id: 41, audio: 'Jubbega_J.wav', coord: LOCS['Jubbega'], place: 'Jubbega', placef: 'Jobbegea'},
-	     {id: 42, audio: 'Rinsumageest_O.wav', coord: LOCS['Rinsumageest'], place: 'Rinsumageest', placef: 'Rinsumageast'},
-	     {id: 43, audio: 'Tietjerk_J.wav', coord: LOCS['Tietjerk'], place: 'Tietjerk', placef: 'Tytsjerk'},
-	     {id: 44, audio: 'Holwerd_O.wav', coord: LOCS['Holwerd'], place: 'Holwerd', placef: 'Holwert'},
-	     {id: 45, audio: 'Hallum_J.wav', coord: LOCS['Hallum'], place: 'Hallum', placef: 'Hallum'},
-	     {id: 46, audio: 'Weidum_O.wav', coord: LOCS['Weidum'], place: 'Weidum', placef: 'Weidum'},
-	     {id: 47, audio: 'Makkum_J.wav', coord: LOCS['Makkum'], place: 'Makkum', placef: 'Makkum'},
-	     {id: 48, audio: 'Woudsend_O.wav', coord: LOCS['Woudsend'], place: 'Woudsend', placef: 'Wâldsein'},
-	     {id: 49, audio: 'Joure_O.wav', coord: LOCS['Joure'], place: 'Joure', placef: 'De Jouwer'},
-	     {id: 50, audio: 'Workum_J.wav', coord: LOCS['Workum'], place: 'Workum', placef: 'Warkum'},
+	     {id: 41, audio: 'Jubbega_J.wav', loc: LOCS['Jubbega'] },
+	     {id: 42, audio: 'Rinsumageest_O.wav', loc: LOCS['Rinsumageest'] },
+	     {id: 43, audio: 'Tietjerk_J.wav', loc: LOCS['Tietjerk'] },
+	     {id: 44, audio: 'Holwerd_O.wav', loc: LOCS['Holwerd'] },
+	     {id: 45, audio: 'Hallum_J.wav', loc: LOCS['Hallum'] },
+	     {id: 46, audio: 'Weidum_O.wav', loc: LOCS['Weidum'] },
+	     {id: 47, audio: 'Makkum_J.wav', loc: LOCS['Makkum'] },
+	     {id: 48, audio: 'Woudsend_O.wav', loc: LOCS['Woudsend'] },
+	     {id: 49, audio: 'Joure_O.wav', loc: LOCS['Joure'] },
+	     {id: 50, audio: 'Workum_J.wav', loc: LOCS['Workum'] },
          ]
         },
         {id: 6,
          items: [
-	     {id: 51, audio: 'Jubbega_O.wav', coord: LOCS['Jubbega'], place: 'Jubbega', placef: 'Jobbegea'},
-	     {id: 52, audio: 'Rinsumageest_J.wav', coord: LOCS['Rinsumageest'], place: 'Rinsumageest', placef: 'Rinsumageast'},
-	     {id: 53, audio: 'Tietjerk_O.wav', coord: LOCS['Tietjerk'], place: 'Tietjerk', placef: 'Tytsjerk'},
-	     {id: 54, audio: 'Holwerd_J.wav', coord: LOCS['Holwerd'], place: 'Holwerd', placef: 'Holwert'},
-	     {id: 55, audio: 'Hallum_O.wav', coord: LOCS['Hallum'], place: 'Hallum', placef: 'Hallum'},
-	     {id: 56, audio: 'Weidum_J.wav', coord: LOCS['Weidum'], place: 'Weidum', placef: 'Weidum'},
-	     {id: 57, audio: 'Makkum_O.wav', coord: LOCS['Makkum'], place: 'Makkum', placef: 'Makkum'},
-	     {id: 58, audio: 'Woudsend_J.wav', coord: LOCS['Woudsend'], place: 'Woudsend', placef: 'Wâldsein'},
-	     {id: 59, audio: 'Joure_J.wav', coord: LOCS['Joure'], place: 'Joure', placef: 'De Jouwer'},
-	     {id: 60, audio: 'Workum_O.wav', coord: LOCS['Workum'], place: 'Workum', placef: 'Warkum'},
+	     {id: 51, audio: 'Jubbega_O.wav', loc: LOCS['Jubbega'] },
+	     {id: 52, audio: 'Rinsumageest_J.wav', loc: LOCS['Rinsumageest'] },
+	     {id: 53, audio: 'Tietjerk_O.wav', loc: LOCS['Tietjerk'] },
+	     {id: 54, audio: 'Holwerd_J.wav', loc: LOCS['Holwerd'] },
+	     {id: 55, audio: 'Hallum_O.wav', loc: LOCS['Hallum'] },
+	     {id: 56, audio: 'Weidum_J.wav', loc: LOCS['Weidum'] },
+	     {id: 57, audio: 'Makkum_O.wav', loc: LOCS['Makkum'] },
+	     {id: 58, audio: 'Woudsend_J.wav', loc: LOCS['Woudsend'] },
+	     {id: 59, audio: 'Joure_J.wav', loc: LOCS['Joure'] },
+	     {id: 60, audio: 'Workum_O.wav', loc: LOCS['Workum'] },
          ]
         },
         {id: 7,
          items: [
-	     {id: 61, audio: 'NijBeets_J.wav', coord: LOCS['Nij Beets'], place: 'Nij Beets', placef: 'Nij Beets'},
-	     {id: 62, audio: 'DeWestereen_O.wav', coord: LOCS['De Westereen'], place: 'De Westereen', placef: 'De Westereen'},
-	     {id: 63, audio: 'Harkema_J.wav', coord: LOCS['Harkema'], place: 'Harkema', placef: 'Harkema'},
-	     {id: 64, audio: 'Holwerd_O.wav', coord: LOCS['Holwerd'], place: 'Holwerd', placef: 'Holwert'},
-	     {id: 65, audio: 'Anjum_J.wav', coord: LOCS['Anjum'], place: 'Anjum', placef: 'Anjum'},
-	     {id: 66, audio: 'Sexbierum_O.wav', coord: LOCS['Sexbierum'], place: 'Sexbierum', placef: 'Seisbierrum'},
-	     {id: 67, audio: 'Akkrum_J.wav', coord: LOCS['Akkrum'], place: 'Akkrum', placef: 'Akkrum'},
-	     {id: 68, audio: 'Grou_O.wav', coord: LOCS['Grou'], place: 'Grou', placef: 'Grou'},
-	     {id: 69, audio: 'Lemmer_O.wav', coord: LOCS['Lemmer'], place: 'Lemmer', placef: 'Lemmer'},
-	     {id: 70, audio: 'Oudemirdum_J.wav', coord: LOCS['Oudemirdum'], place: 'Oudemirdum', placef: 'Aldemardum'},
+	     {id: 61, audio: 'NijBeets_J.wav', loc: LOCS['Nij Beets'] },
+	     {id: 62, audio: 'DeWestereen_O.wav', loc: LOCS['De Westereen'] },
+	     {id: 63, audio: 'Harkema_J.wav', loc: LOCS['Harkema'] },
+	     {id: 64, audio: 'Holwerd_O.wav', loc: LOCS['Holwerd'] },
+	     {id: 65, audio: 'Anjum_J.wav', loc: LOCS['Anjum'] },
+	     {id: 66, audio: 'Sexbierum_O.wav', loc: LOCS['Sexbierum'] },
+	     {id: 67, audio: 'Akkrum_J.wav', loc: LOCS['Akkrum'] },
+	     {id: 68, audio: 'Grou_O.wav', loc: LOCS['Grou'] },
+	     {id: 69, audio: 'Lemmer_O.wav', loc: LOCS['Lemmer'] },
+	     {id: 70, audio: 'Oudemirdum_J.wav', loc: LOCS['Oudemirdum'] },
          ]
         },
         {id: 8,
          items: [
-	     {id: 71, audio: 'NijBeets_O.wav', coord: LOCS['Nij Beets'], place: 'Nij Beets', placef: 'Nij Beets'},
-	     {id: 72, audio: 'DeWestereen_J.wav', coord: LOCS['De Westereen'], place: 'De Westereen', placef: 'De Westereen'},
-	     {id: 73, audio: 'Harkema_O.wav', coord: LOCS['Harkema'], place: 'Harkema', placef: 'Harkema'},
-	     {id: 74, audio: 'Holwerd_J.wav', coord: LOCS['Holwerd'], place: 'Holwerd', placef: 'Holwert'},
-	     {id: 75, audio: 'Anjum_O.wav', coord: LOCS['Anjum'], place: 'Anjum', placef: 'Anjum'},
-	     {id: 76, audio: 'Sexbierum_J.wav', coord: LOCS['Sexbierum'], place: 'Sexbierum', placef: 'Seisbierrum'},
-	     {id: 77, audio: 'Akkrum_O.wav', coord: LOCS['Akkrum'], place: 'Akkrum', placef: 'Akkrum'},
-	     {id: 78, audio: 'Grou_J.wav', coord: LOCS['Grou'], place: 'Grou', placef: 'Grou'},
-	     {id: 79, audio: 'Lemmer_J.wav', coord: LOCS['Lemmer'], place: 'Lemmer', placef: 'Lemmer'},
-	     {id: 80, audio: 'Oudemirdum_O.wav', coord: LOCS['Oudemirdum'], place: 'Oudemirdum', placef: 'Aldemardum'},
+	     {id: 71, audio: 'NijBeets_O.wav', loc: LOCS['Nij Beets'] },
+	     {id: 72, audio: 'DeWestereen_J.wav', loc: LOCS['De Westereen'] },
+	     {id: 73, audio: 'Harkema_O.wav', loc: LOCS['Harkema'] },
+	     {id: 74, audio: 'Holwerd_J.wav', loc: LOCS['Holwerd'] },
+	     {id: 75, audio: 'Anjum_O.wav', loc: LOCS['Anjum'] },
+	     {id: 76, audio: 'Sexbierum_J.wav', loc: LOCS['Sexbierum'] },
+	     {id: 77, audio: 'Akkrum_O.wav', loc: LOCS['Akkrum'] },
+	     {id: 78, audio: 'Grou_J.wav', loc: LOCS['Grou'] },
+	     {id: 79, audio: 'Lemmer_J.wav', loc: LOCS['Lemmer'] },
+	     {id: 80, audio: 'Oudemirdum_O.wav', loc: LOCS['Oudemirdum'] },
          ]
         },
     ];
@@ -380,8 +380,8 @@
         let data = JSON.parse(document.querySelector('#response_json').value);
 
         let srcLatLng = {
-            lat: round.item.coord[1],
-            lng: round.item.coord[0]
+            lat: round.item.loc.coord[1],
+            lng: round.item.loc.coord[0]
         };
 
         let sourceMarker = new google.maps.Marker({
@@ -424,13 +424,13 @@
 
         if (km < 5) {
 	    feedback.innerHTML += `
-		<p>Dat klopt, het juiste antwoord is ${round.item.place}. </p>
-		<p>Dat kloppet, it goede antwurd is ${round.item.placef}.</p>`;
+		<p>Dat klopt, het juiste antwoord is ${round.item.loc.place}. </p>
+		<p>Dat kloppet, it goede antwurd is ${round.item.loc.placef}.</p>`;
         }
 	else {
 	    feedback.innerHTML += `
-		<p>Het juiste antwoord was ${round.item.place}. </p>
-		<p>It goede antwurd wie ${round.item.placef}.</p>`;
+		<p>Het juiste antwoord was ${round.item.loc.place}. </p>
+		<p>It goede antwurd wie ${round.item.loc.placef}.</p>`;
 	}
 	feedback.innerHTML += `
 		<p></p>
@@ -456,7 +456,7 @@
 
         round.advanceItem();
         let audioSrc = round.item.audio;
-        let correctLocation = round.item.coord;
+        let correctLocation = round.item.loc.coord;
 
         let audio = document.createElement('audio');
         audio.controls = true;
