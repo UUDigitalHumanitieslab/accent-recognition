@@ -191,8 +191,8 @@
 
     const PRACTICE = {
 	items: [
-	    {id: 1, audio: 'Test1.wav', coord:[5.7201, 53.1277], place: 'Mantgum', placef: 'Mantgum'},
-	    {id: 2, audio: 'Test2.wav', coord:[5.9952086699572815, 53.32903780907986], place: 'Dokkum', placef: 'Dokkum'},
+	    {id: 1, audio: 'Jobbegea_J_voorbeeld1.wav', loc: LOCS['Jubbega'] },
+	    {id: 2, audio: 'Lemmer_J_voorbeeld2.wav', loc: LOCS['Lemmer'] },
 	]
     };
 
