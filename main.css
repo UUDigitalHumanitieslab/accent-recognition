@@ -25,6 +25,16 @@
     padding: 0 !important;
 }
 
+@media (max-width: 770px) {
+    .Skin .QuestionText {
+        padding: 0 20px !important;
+    }
+
+    .Skin .QuestionOuter {
+        padding-bottom: 0 !important;
+    }
+}
+
 .question-map {
     height: 50vh;
 }
