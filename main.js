@@ -244,18 +244,21 @@
         total = 0;
 
         pickList() {
-            if (this.listsStarted.length < LISTS.length) {
-                let i;
-                do {
-                    i = Math.floor(Math.random() * LISTS.length);
-                } while(this.listsStarted.indexOf(i) >= 0);
+	    let i;
+	    if (this.listsStarted.length == 0) {
+		// pick first list at random
+		i = Math.floor(Math.random() * LISTS.length);
+	    }
+	    else {
+		// look at the next list and pick the next one
+		let last = this.listsStarted[this.listsStarted.length - 1];
+		i = (last + 1) % LISTS.length;
+	    }
 
-                let list = LISTS[i];
-                this.listsStarted.push(i);
-                this.total += list.items.length;
-                return list;
-            }
-            return null;
+	    let list = LISTS[i];
+	    this.listsStarted.push(i);
+	    this.total += list.items.length;
+	    return list;
         }
 
         startRound() {
