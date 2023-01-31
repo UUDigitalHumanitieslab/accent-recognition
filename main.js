@@ -442,7 +442,7 @@
 
     // placeholder score formula
     function kmToPoints(km) {
-	if (km < 5) return 1;
+	if (km < 10) return 1;
 	return 0;
     }
 
