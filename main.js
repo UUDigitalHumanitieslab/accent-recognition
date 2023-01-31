@@ -18,7 +18,8 @@
         iframe.remove();
 
         let script = document.createElement('script');
-        script.src = 'https://maps.googleapis.com/maps/api/js?key=' + MAPS_API_KEY;
+	window.doNothing = function() {}; // empty callback for maps API
+        script.src = 'https://maps.googleapis.com/maps/api/js?callback=doNothing&key=' + MAPS_API_KEY;
         document.head.appendChild(script);
     }
 
