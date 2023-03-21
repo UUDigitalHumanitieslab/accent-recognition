@@ -26,8 +26,8 @@
     const MAP_ZOOM = 8.5;
     const MAP_OPTIONS = {
         center: {
-            lat: 53.1836,
-            lng: 5.6229,
+            lat: 53.1636,
+            lng: 5.6329,
         },
         restriction: {
             latLngBounds: {
@@ -53,26 +53,26 @@
     ]};
 
     const LOCS = {
-	'Nij Beets': { coord: [5.8541195, 53.0651628], place: 'Nij Beets', placef: 'Nij Beets' },
-	'Bakkeveen': { coord: [6.1398719, 53.0740136], place: 'Bakkeveen', placef: 'Bakkefean' },
-	'Rinsumageest': { coord: [5.8936294, 53.2932624], place: 'Rinsumageest', placef: 'Rinsumageast' },
-	'De Westereen': { coord: [6.0142491, 53.2657702], place: 'De Westereen', placef: 'De Westereen' },
-	'Hallum': { coord: [5.747541, 53.3095117], place: 'Hallum', placef: 'Hallum' },
-	'Sexbierum': { coord: [5.470268, 53.2177585], place: 'Sexbierum', placef: 'Seisbierrum' },
-	'Woudsend': { coord: [5.6183816, 52.9411684], place: 'Woudsend', placef: 'Wâldsein' },
-	'Grou': { coord: [5.8047157, 53.104226], place: 'Grou', placef: 'Grou' },
-	'Joure': { coord: [5.655277, 52.9789039], place: 'Joure', placef: 'De Jouwer' },
-	'Oudemirdum': { coord: [5.5129716, 52.8528357], place: 'Oudemirdum', placef: 'Aldemardum' },
-	'Jubbega': { coord: [5.9815669, 52.9814468], place: 'Jubbega', placef: 'Jobbegea' },
-	'Tietjerk': { coord: [5.8590231, 53.199898], place: 'Tietjerk', placef: 'Tytsjerk' },
-	'Harkema': { coord: [6.1109401, 53.1845225], place: 'Harkema', placef: 'Harkema' },
-	'Anjum': { coord: [6.1146752, 53.3781042], place: 'Anjum', placef: 'Anjum' },
-	'Weidum': { coord: [5.7265206, 53.1425023], place: 'Weidum', placef: 'Weidum' },
-	'Makkum': { coord: [5.379195, 53.0565876], place: 'Makkum', placef: 'Makkum' },
-	'Akkrum': { coord: [5.7943942, 53.0549881], place: 'Akkrum', placef: 'Akkrum' },
-	'Lemmer': { coord: [5.6627988, 52.8668586], place: 'Lemmer', placef: 'De Lemmer' },
-	'Workum': { coord: [5.4037903, 52.9734946], place: 'Workum', placef: 'Warkum' },
-	'Holwerd': { coord: [5.8624713, 53.3633274], place: 'Holwerd', placef: 'Holwert' }
+	'Nij Beets': { coord: [6.002778, 53.069722], place: 'Nij Beets', placef: 'Nij Beets' },
+	'Bakkeveen': { coord: [6.257222, 53.081667], place: 'Bakkeveen', placef: 'Bakkefean' },
+	'Rinsumageest': { coord: [5.9475, 53.296667], place: 'Rinsumageest', placef: 'Rinsumageast' },
+	'De Westereen': { coord: [6.035556, 53.255278], place: 'De Westereen', placef: 'De Westereen' },
+	'Hallum': { coord: [5.785556, 53.306389], place: 'Hallum', placef: 'Hallum' },
+	'Sexbierum': { coord: [5.484444, 53.218333], place: 'Sexbierum', placef: 'Seisbierrum' },
+	'Woudsend': { coord: [5.6275, 52.942222], place: 'Woudsend', placef: 'Wâldsein' },
+	'Grou': { coord: [5.838861, 53.094944], place: 'Grou', placef: 'Grou' },
+	'Joure': { coord: [5.799722, 52.966111], place: 'Joure', placef: 'De Jouwer' },
+	'Oudemirdum': { coord: [5.535, 52.849722], place: 'Oudemirdum', placef: 'Aldemardum' },
+	'Jubbega': { coord: [6.125, 53.005], place: 'Jubbega', placef: 'Jobbegea' },
+	'Tietjerk': { coord: [5.911389, 53.213333], place: 'Tietjerk', placef: 'Tytsjerk' },
+	'Harkema': { coord: [6.136667, 53.185556], place: 'Harkema', placef: 'Harkema' },
+	'Anjum': { coord: [6.127222, 53.374722], place: 'Anjum', placef: 'Anjum' },
+	'Weidum': { coord: [5.743889, 53.145833], place: 'Weidum', placef: 'Weidum' },
+	'Makkum': { coord: [5.403611, 53.055], place: 'Makkum', placef: 'Makkum' },
+	'Akkrum': { coord: [5.835556, 53.048889], place: 'Akkrum', placef: 'Akkrum' },
+	'Lemmer': { coord: [5.711944, 52.844444], place: 'Lemmer', placef: 'De Lemmer' },
+	'Workum': { coord: [5.445, 52.9775], place: 'Workum', placef: 'Warkum' },
+	'Holwerd': { coord: [5.900556, 53.368333], place: 'Holwerd', placef: 'Holwert' }
     };
 
     const LISTS = [
