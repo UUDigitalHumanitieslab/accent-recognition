@@ -25,18 +25,24 @@
     padding: 0 !important;
 }
 
-@media (max-width: 770px) {
+/* @media (max-width: 770px) { */
     .Skin .QuestionText {
-        padding: 0 20px !important;
+        padding-bottom: 0 !important;
     }
 
     .Skin .QuestionOuter {
         padding-bottom: 0 !important;
     }
-}
+/* } */
 
+    .Skin #LogoContainer {
+        margin-bottom: 5px !important;
+    }
 .question-map {
-    height: 50vh;
+    width: 100vw;
+    height: 25vw;
+    max-width: 800px;
+    min-height: 480px;
 }
 
 .listen-first {

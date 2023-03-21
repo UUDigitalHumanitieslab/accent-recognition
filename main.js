@@ -1,9 +1,9 @@
 (function() {
     // safeguard against qualtrices loading this file multiple times, which might cause issues
-    if (top.window.dfdLoaded) {
+    if (window.dfdLoaded) {
         return;
     }
-    top.window.dfdLoaded = true;
+    window.dfdLoaded = true;
 
     if (typeof google === 'undefined') {
         // Qualtrics includes a copy of prototype.js, which by default overrides Array.from.
@@ -243,6 +243,8 @@
         // how many items were presented in total
         total = 0;
 
+	isPractice = false;
+
         pickList() {
 	    let i;
 	    if (this.listsStarted.length == 0) {
@@ -262,6 +264,12 @@
         }
 
         startRound() {
+	    if (this.isPractice) {
+		// we're done with practice round, reset score
+		this.score = 0;
+		this.isPractice = false;
+	    }
+
             let list = this.pickList();
             if (list !== null) {
                 return new Round(list);
@@ -270,6 +278,7 @@
         }
 
 	practiceRound() {
+	    this.isPractice = true;
 	    return new Round(PRACTICE);
 	}
     }
@@ -331,16 +340,25 @@
     }
 
     function initGoogleMapsQuestion(id, container) {
+	if (typeof google === 'undefined') {
+	    // google api not loaded yet, this sometimes happens if the survey is resumed mid-survey
+	    setTimeout(() => initGoogleMapsQuestion(id, container), 500);
+	    return;
+	}
+
         let map = insertMap(id, container);
 
         let dataBox = document.getElementById(`QR~${id}`);
         dataBox.style.display = 'none';
 
-        let played = false;
-        document.querySelector('#fragment_audio').addEventListener('play', () => {
-            document.querySelector('.listen-first').style.opacity = 0;
-            played = true;
-        });
+	let audioElement = document.querySelector('#fragment_audio');
+        let played = audioElement.played.length > 0;
+	if (!played) {
+	    audioElement.addEventListener('play', () => {
+		document.querySelector('.listen-first').style.opacity = 0;
+		played = true;
+	    });
+	}
 
         let marker = null;
         google.maps.event.addListener(map, 'click', (event) => {
@@ -412,6 +430,10 @@
         map.setCenter(bounds.getCenter());
         map.setZoom(MAP_ZOOM);
 
+	// cheat
+	// data.response.lat = srcLatLng.lat;
+	// data.response.lng = srcLatLng.lng;
+
         // calculate distance and score
         let km = haversineDistance([srcLatLng.lat, srcLatLng.lng],
                                    [data.response.lat, data.response.lng]);
@@ -445,8 +467,8 @@
 
     // placeholder score formula
     function kmToPoints(km) {
-	if (km < 10) return 1;
-	return 0;
+	if (km > 40) return 0;
+	return Math.log(41 - km) / Math.log(41);
     }
 
     function onReadyHandler() {
@@ -463,21 +485,21 @@
         let audioSrc = round.item.audio;
         let correctLocation = round.item.loc.coord;
 
+	let audioContainer = document.createElement('div');
+	audioContainer.classList.add('audio-container');
+        questionBody.appendChild(audioContainer);
+
         let audio = document.createElement('audio');
         audio.controls = true;
         audio.src = AUDIO_ROOT + audioSrc;
         audio.id = 'fragment_audio';
-	if (questionBody.offsetWidth > 0) {
-	    // small hack to prevent audio autoplaying in mobile preview iframe
-	    // (only relevant when previewing the survey)
-	    audio.autoplay = true;
-	}
-        questionBody.appendChild(audio);
+	audio.autoplay = true;
+	audioContainer.appendChild(audio);
 
         let listenFirst = document.createElement('div');
         listenFirst.classList.add('listen-first');
-        listenFirst.innerHTML = '<span>Please listen to the speaker first</span>';
-        questionBody.appendChild(listenFirst);
+        listenFirst.innerHTML = '<span>Luister eerst naar de spreker</span>';
+        audioContainer.appendChild(listenFirst);
 
         let input = document.createElement('input');
         input.value = correctLocation;
