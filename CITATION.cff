@@ -1,0 +1,27 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Dialect for Drongo scripts
+message: >-
+  Scripts used in the Qualtrics survey for Dialect for
+  Drongo II.
+type: software
+authors:
+  - name: >-
+      Research Software Lab, Centre for Digital Humanities,
+      Utrecht University
+    country: NL
+    city: Utrecht
+    website: >-
+      https://cdh.uu.nl/centre-for-digital-humanities/research-software-lab/
+repository-code: >-
+  https://github.com/UUDigitalHumanitieslab/dialect-for-drongo-ii
+abstract: >
+  Scripts used in the Qualtrics survey for Dialect for
+  Drongo II.
+keywords:
+  - qualtrics
+  - Frisian
+  - questionnaire
+license: BSD-3-Clause AND ODbL-1.0
