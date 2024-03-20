@@ -29,7 +29,7 @@ It is primarily used for implementing the following:
 2. Interactive maps using Google Maps API
 3. Calculating a score based on the distance between an indicated location and speaker location (using the Haversine formula)
 
-The self-contained `main.js` is loaded into the Qualtrics survey using the /Header/ definition as part of the survey's /Look & Feel/ configuration.
+The self-contained `main.js` is loaded into the Qualtrics survey using the *Header* definition as part of the survey's *Look & Feel* configuration.
 `main.js` registers the following functions into the global window object:
 
 ```
