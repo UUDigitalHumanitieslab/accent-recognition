@@ -2,10 +2,9 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: Dialect for Drongo scripts
+title: Accent recognition: a perceptual-dialectological study of Frisian
 message: >-
-  Scripts used in the Qualtrics survey for Dialect for
-  Drongo II.
+  Map-based accent recognition experiment using Qualtrics
 type: software
 authors:
   - name: >-
@@ -16,10 +15,7 @@ authors:
     website: >-
       https://cdh.uu.nl/centre-for-digital-humanities/research-software-lab/
 repository-code: >-
-  https://github.com/UUDigitalHumanitieslab/dialect-for-drongo-ii
-abstract: >
-  Scripts used in the Qualtrics survey for Dialect for
-  Drongo II.
+  https://github.com/UUDigitalHumanitieslab/accent-recognition
 keywords:
   - qualtrics
   - Frisian
